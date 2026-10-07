@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-paper: #faf8f5;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f2ede4;
+    --text-primary: #1c1917;
+    --text-secondary: #57534e;
+    --text-muted: #78716c;
+    --border-subtle: #e7e2d9;
+    --border-strong: #d6cfc4;
+    --accent: #d9532f;
+    --accent-hover: #c04523;
+    --accent-subtle: #fbeee9;
+    --teal: #137970;
+    --teal-subtle: #e6f3f2;
+    --linkedin-blue: #0a66c2;
+    --linkedin-bg: #f4f2ee;
+  }
+
+  .dark {
+    --bg-paper: #121316;
+    --bg-surface: #1a1b1f;
+    --bg-subtle: #24262b;
+    --text-primary: #f5f5f4;
+    --text-secondary: #a8a29e;
+    --text-muted: #78716c;
+    --border-subtle: #2e3138;
+    --border-strong: #3e424b;
+    --accent: #e05a36;
+    --accent-hover: #f06a46;
+    --accent-subtle: #301f1b;
+    --teal: #1cb0a4;
+    --teal-subtle: #142a28;
+    --linkedin-blue: #70b5f9;
+    --linkedin-bg: #000000;
+  }
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Tiptap Editor Typography & Layout */
+.tiptap {
+  outline: none !important;
+  min-height: 380px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.tiptap p {
+  margin-bottom: 0.85em;
+}
+
+.tiptap p:last-child {
+  margin-bottom: 0;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: var(--text-muted);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.85em;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 0.85em;
+}
+
+.tiptap li {
+  margin-bottom: 0.25em;
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 2px dashed var(--border-strong);
+  margin: 1.5rem 0;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 1rem 0;
+}
+
+.tiptap code {
+  background-color: var(--bg-subtle);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* LinkedIn Feed Card Typography */
+.linkedin-font {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, sans-serif;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+/* Smooth pulse animation */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
