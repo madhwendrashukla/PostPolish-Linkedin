@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Header } from '@/components/ui/Header';
+import { Footer } from '@/components/ui/Footer';
 import { PostEditor } from '@/components/editor/PostEditor';
 import { LinkedInCard } from '@/components/preview/LinkedInCard';
 import { MetricsBar } from '@/components/ui/MetricsBar';
@@ -349,6 +350,9 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Footer with Attribution */}
+      <Footer />
 
       {/* Sticky Bottom Action Bar for Mobile Devices (<1024px) */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[var(--bg-surface)]/95 backdrop-blur-md border-t border-[var(--border-subtle)] px-4 py-2.5 flex items-center justify-between gap-2 shadow-lg">

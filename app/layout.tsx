@@ -29,7 +29,15 @@ export const metadata: Metadata = {
     'LinkedIn hook preview',
     'PostPolish',
   ],
-  authors: [{ name: 'PostPolish' }],
+  authors: [{ name: 'Madhwendra Shukla' }],
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({
